@@ -1,0 +1,164 @@
+.header_wrapper {
+    @include site_width;
+
+    //закрепил хедер
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background-color: white;
+}
+
+.header {
+    @include content;
+
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
+
+    &_logo {
+        display: flex;
+        align-items: center;
+    }
+
+    &_img_logo {
+        padding-right: 4%;
+    }
+
+    &_link {
+        display: flex;
+        align-items: center;
+        margin-left: 10%;  
+    }
+
+    &_title_logo {
+        font-size: 30px;
+        font-family: 'Oxygen-light', sans-serif; 
+        color: black;
+    }
+
+    &_nav_list {
+        display: flex;
+        align-items: center;
+    }
+
+    &_nav_item {
+        padding-right: 40px;
+        margin-top: 30px;
+    }
+
+    &_border {
+        position: relative;
+        font-size: 15px;
+        font-family: 'Oxygen-light', sans-serif; 
+        color: #6c6c6c;
+    }
+
+
+    &_border::before {
+        content:"";
+        top: 36px;
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: blue;
+        transition: 0.2s;
+        transform: scaleX(0);
+    }
+
+        
+    &_border:hover:before {
+        width: 100%;
+        transform: scaleX(1);
+    }
+}
+
+.nav-toggle {
+    display: none;
+  }
+
+    .nav-burger {
+        font-size: 0;
+    }
+
+@include respond-to($tablet) {
+    .header_nav_list {
+        display: none;
+    }  
+
+    .nav-toggle {
+        display: none;
+      }
+
+      .nav-toggle:checked ~ .header_nav_list {
+        left: 0;
+      }
+
+      .nav-burger {
+        font-size: 0;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+      }
+      
+      .nav-burger::before {
+        content: "";
+        background-image: url(../images/burger.png);
+        display: inline-block;
+        width: 35px;
+        height: 35px; 
+      }
+
+      
+    .header_nav_list {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba($color: #000000, $alpha: 95%);
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        border-top: 5px solid blue;
+        text-align: center;
+        font-size: 15px;
+        transition: left 1s;
+        
+    }
+  
+    .header_nav_item { 
+         padding: 0;
+         margin-bottom: 30px;
+     }
+
+ }
+
+
+ //@include respond-to($tablet) {
+  //  .header_nav_list {
+   // display: none;
+   // }  
+   // .header {
+   //     position: relative;
+//
+   //     &_logo::after {
+   //         position: absolute;
+   //         content: url(../images/burger.png);
+    //        top: 25%;
+    //        left: 80%;
+    //        width: 100%;
+    //        height: 100%;
+    //    }
+   // }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+

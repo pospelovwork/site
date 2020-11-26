@@ -1,0 +1,23 @@
+@mixin site_width($width: 100%, $margin: 0 auto) {
+    width: $width;
+    margin: $margin;
+}
+
+@mixin content($width: 100%, $margin: 0 auto) {
+    max-width: 1024px;
+    width: $width;
+    margin: $margin; 
+}
+
+@mixin respond-to($tablet: 639px ) {
+     @media screen and (max-width: $tablet) {
+         @content;
+    }
+}
+    
+
+@mixin respond-to($tablet-2: 849px) {
+    @media screen and (max-width: $tablet-2) {
+        @content;
+   }
+}

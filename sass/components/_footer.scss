@@ -1,0 +1,18 @@
+.footer {
+    @include site_width;
+    height: 90px;
+
+    &_item {
+        @include content;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &_copyr {
+            font-size: 15px;
+            font-family: 'Oxygen-light', sans-serif;
+            color: $text-color; 
+        }
+    }
+}

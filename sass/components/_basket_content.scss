@@ -1,0 +1,65 @@
+.basket {
+    @include site_width;
+    border-bottom: 1px solid grey;
+
+    &_item {
+        @include content;
+        padding: 50px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &_block1 {
+        margin-right: 100px;
+        text-align: center;
+
+        &_title {
+            font-size: 25px;
+            font-family: 'Oxygen-light', sans-serif;
+            color: $text-color;
+
+            &_img {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    &_title2 {
+        font-size: 20px;
+        font-family: 'Oxygen-light', sans-serif;
+        color: $text-color;
+
+        &_discript {
+            line-height: 2;
+            margin-top: 20px;
+            font-size: 15px;
+            font-family: 'Oxygen-light', sans-serif;
+            color: $text-color;
+        }
+    }
+}
+
+
+@include respond-to($tablet-2) {
+    .basket_item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .basket_block1_title_img {
+        width: 100%;
+    }
+
+    .basket_block1 {
+        margin-right: 0px;
+        justify-content: center;
+    }
+
+    .basket_block2 {
+        margin-top: 30px;
+    }
+     
+}
